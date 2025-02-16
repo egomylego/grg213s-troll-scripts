@@ -6,11 +6,11 @@ local humanoid = character:WaitForChild("Humanoid")
 local ragdolling = false
 local motors = {}
 
-task.wait(1)
+task.wait()
 if game:IsLoaded() then
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "FE DIVE SCRIPT LOADED", -- Notification title
-		Text = "dive script loaded, have fun :)", -- Notification text
+		Text = "dive script loaded, have fun :) Keybind: Press the semicolon (;) to YOINK", -- Notification text
 		Button1 = "OK", -- button 1 text (optional)
 	})
 end
@@ -98,7 +98,7 @@ end
 
 -- Toggle ragdoll when "R" is pressed, but only if not typing in chat
 local function onInputBegan(input, gameProcessed)
-	if not gameProcessed and input.KeyCode == Enum.KeyCode.R then
+	if not gameProcessed and input.KeyCode == Enum.KeyCode.Semicolon then
 		if not ragdolling then
 			enableRagdoll()
 		end
