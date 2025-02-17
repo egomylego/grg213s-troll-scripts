@@ -2,7 +2,7 @@ task.wait(1)
 if game:IsLoaded() then
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "FE DIVE SCRIPT LOADED", -- Notification title
-		Text = "dive script loaded, have fun :) Keybind: Press the semicolon (;) to toggle YOINK", -- Notification text
+		Text = "dive script loaded Keybind: Press the semicolon (;) to toggle YOINK", -- Notification text
 		Duration = math.huge,
 		Button1 = "OK", -- button 1 text (optional)
 	})
