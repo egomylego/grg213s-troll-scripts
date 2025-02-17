@@ -8,6 +8,7 @@ if game:IsLoaded() then
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "WARNING!", -- Notification title
 		Text = "do NOT, change the values to letters, it might kill you.", -- Notification text
+		Duration = math.huge,
 		Button1 = "OK", -- button 1 text (optional)
 	})
 end
