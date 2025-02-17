@@ -1,4 +1,4 @@
-task.wait()
+task.wait(1)
 if game:IsLoaded() then
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "UNIVERSAL SHIFT2RUN SCRIPT LOADED", -- Notification title
