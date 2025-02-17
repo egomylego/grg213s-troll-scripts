@@ -8,7 +8,7 @@ if game:IsLoaded() then
 	})
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "WARNING!", -- Notification title
-		Text = "do NOT, set the values as any other characters except for numbers, it will completely break ur character", -- Notification text
+		Text = "do NOT, set the values as any other letters, it will break", -- Notification text
 		Duration = math.huge,
 		Button1 = "OK", -- button 1 text (optional)
 	})
