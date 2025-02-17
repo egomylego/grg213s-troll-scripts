@@ -8,6 +8,7 @@ if game:IsLoaded() then
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "WARNING!", -- Notification title
 		Text = "YOU MAY HAVE TO TURN OFF SHIFTLOCK TO USE THIS SCRIPT!!", -- Notification text
+		Duration = math.huge,
 		Button1 = "OK", -- button 1 text (optional)
 	})
 end
