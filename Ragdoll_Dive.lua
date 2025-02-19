@@ -2,13 +2,13 @@ task.wait(1)
 if game:IsLoaded() then
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "FE DIVE SCRIPT LOADED", -- Notification title
-		Text = "dive script loaded!! Keybind: Press the semicolon (;) to toggle YOINK", -- Notification text
+		Text = "dive script loaded, have fun :) Keybind: Press the semicolon (;) to toggle YOINK", -- Notification text
 		Duration = math.huge,
 		Button1 = "OK", -- button 1 text (optional)
 	})
 	game.StarterGui:SetCore("SendNotification", {
 		Title = "WARNING!", -- Notification title
-		Text = "do NOT, set the values as any other letters, it will break", -- Notification text
+		Text = "do NOT, set the values as any other characters except for numbers, it will completely break ur character", -- Notification text
 		Duration = math.huge,
 		Button1 = "OK", -- button 1 text (optional)
 	})
@@ -102,15 +102,17 @@ local function enableRagdoll()
 end
 
 
-
+local function toggleragdoll()
+	if ragdolling then
+		disableRagdoll()
+	else
+		enableRagdoll()
+	end
+end
 -- Toggle ragdoll when "R" is pressed, but only if not typing in chat
 local function onInputBegan(input, gameProcessed)
 	if not gameProcessed and input.KeyCode == Enum.KeyCode.Semicolon then
-		if ragdolling then
-			disableRagdoll()
-		else
-			enableRagdoll()
-		end
+		toggleragdoll()
 	end
 end
 
@@ -137,6 +139,8 @@ local forspeedlab = Instance.new("TextLabel")
 local upspeedlab = Instance.new("TextLabel")
 local speedbox2 = Instance.new("TextBox")
 local speedbox1 = Instance.new("TextBox")
+local mobilebutton = Instance.new("TextButton")
+
 
 -- Properties
 
@@ -150,7 +154,7 @@ Frame.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Frame.BorderColor3 = Color3.new(0, 0, 0)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.175155923, 0, 0.387387395, 0)
-Frame.Selectable = true
+Frame.Selectable = false
 Frame.Size = UDim2.new(0, 431, 0, 257)
 Frame.Style = Enum.FrameStyle.RobloxRound
 
@@ -224,8 +228,29 @@ speedbox1.TextScaled = true
 speedbox1.TextSize = 14
 speedbox1.TextWrapped = true
 
+mobilebutton.Name = "mobilebutton"
+mobilebutton.Parent = Frame
+mobilebutton.BackgroundColor3 = Color3.new(1, 0.00392157, 0.00392157)
+mobilebutton.BorderColor3 = Color3.new(1, 1, 1)
+mobilebutton.BorderSizePixel = 0
+mobilebutton.Position = UDim2.new(0.333626091, 0, 1.03196132, 0)
+mobilebutton.Size = UDim2.new(0, 142, 0, 50)
+mobilebutton.Style = Enum.ButtonStyle.RobloxButton
+mobilebutton.Font = Enum.Font.SourceSansBold
+mobilebutton.Text = "YOINK (For Mobile)"
+mobilebutton.TextColor3 = Color3.new(1, 1, 1)
+mobilebutton.TextSize = 14
+
+mobilebutton.TouchTap:Connect(function()
+	toggleragdoll()
+end)
+mobilebutton.MouseButton1Click:Connect(function()
+	toggleragdoll()
+end)
+
 while true do
 	task.wait(0.01)
 	forwardspeed = speedbox1.Text
 	upwardspeed = speedbox2.Text
+
 end
