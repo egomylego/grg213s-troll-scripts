@@ -46,6 +46,7 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
 Frame.Active = true
+Frame.Draggable = true
 Frame.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Frame.BorderColor3 = Color3.new(0, 0, 0)
 Frame.BorderSizePixel = 0
