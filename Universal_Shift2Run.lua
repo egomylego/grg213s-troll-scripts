@@ -38,6 +38,7 @@ local TextLabel = Instance.new("TextLabel")
 local speedlab = Instance.new("TextLabel")
 local speedbox = Instance.new("TextBox")
 local UICorner = Instance.new("UICorner")
+local mobilebutton = Instance.new("TextButton")
 
 -- Properties
 
@@ -96,6 +97,34 @@ speedbox.TextColor3 = Color3.new(0, 0, 0)
 speedbox.TextScaled = true
 speedbox.TextSize = 14
 speedbox.TextWrapped = true
+
+mobilebutton.Name = "mobilebutton"
+mobilebutton.Parent = Frame
+mobilebutton.BackgroundColor3 = Color3.new(1, 0.00392157, 0.00392157)
+mobilebutton.BorderColor3 = Color3.new(1, 1, 1)
+mobilebutton.BorderSizePixel = 0
+mobilebutton.Position = UDim2.new(0.333626091, 0, 1.03196132, 0)
+mobilebutton.Size = UDim2.new(0, 142, 0, 50)
+mobilebutton.Style = Enum.ButtonStyle.RobloxButton
+mobilebutton.Font = Enum.Font.SourceSansBold
+mobilebutton.Text = "Toggle Sprint"
+mobilebutton.TextColor3 = Color3.new(1, 1, 1)
+mobilebutton.TextSize = 14
+
+mobilebutton.TouchTap:Connect(function()
+	if sprinting then
+		sprinting = false
+	else
+		sprinting = true
+	end
+end)
+mobilebutton.MouseButton1Click:Connect(function()
+	if sprinting then
+		sprinting = false
+	else
+		sprinting = true
+	end
+end)
 
 while true do
 	wait(0.1)
