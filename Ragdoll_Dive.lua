@@ -109,7 +109,6 @@ local function toggleragdoll()
 		enableRagdoll()
 	end
 end
--- Toggle ragdoll when "R" is pressed, but only if not typing in chat
 local function onInputBegan(input, gameProcessed)
 	if not gameProcessed and input.KeyCode == Enum.KeyCode.Semicolon then
 		toggleragdoll()
@@ -154,7 +153,7 @@ Frame.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
 Frame.BorderColor3 = Color3.new(0, 0, 0)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.175155923, 0, 0.387387395, 0)
-Frame.Selectable = false
+Frame.Selectable = true
 Frame.Size = UDim2.new(0, 431, 0, 257)
 Frame.Style = Enum.FrameStyle.RobloxRound
 
